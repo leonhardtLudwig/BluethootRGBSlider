@@ -20,9 +20,9 @@ SoftwareSerial myBT = SoftwareSerial(RXPin, TXPin);
 //const char *empty = "12345\n";
 //char *msgChar = "000000\n";
 char msgChar[7];
-msgChar[6] = '\n';
+//msgChar[6] = '\n';
 char hexString[3];
-hexString[2] = '\n';
+//hexString[2] = '\n';
 
 int r = 0;
 int g = 0;
@@ -32,6 +32,8 @@ int i = 0;
 
 void setup()
 {
+  msgChar[6] = '\n';
+  hexString[2] = '\n';
   pinMode(RXPin, INPUT);
   pinMode(TXPin, OUTPUT);
   pinMode(REDPin,OUTPUT);
