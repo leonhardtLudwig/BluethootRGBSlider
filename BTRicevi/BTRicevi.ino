@@ -17,10 +17,12 @@ const int BLUEPin= 9;
 
 //creo una nuova porta seriale via software
 SoftwareSerial myBT = SoftwareSerial(RXPin, TXPin);
-const char *empty = "12345\n";
+//const char *empty = "12345\n";
 //char *msgChar = "000000\n";
 char msgChar[7];
+msgChar[6] = '\n';
 char hexString[3];
+hexString[2] = '\n';
 
 int r = 0;
 int g = 0;
@@ -87,14 +89,5 @@ void onlyTwo(int start) {
   hexString[1] = msgChar[start + 1];
 }
 
-bool comp () {
-  bool areEqual = true;
-  for (int i = 0;areEqual && i < 6 ; i++) {
-    areEqual = empty[i] == msgChar[i];
-    Serial.println(empty);
-    Serial.print(areEqual);
-  }
-  Serial.println();
-  return areEqual;
-}
+
 
