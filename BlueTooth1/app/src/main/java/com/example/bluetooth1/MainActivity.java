@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             writer = new OutputStreamWriter(btSocket.getOutputStream());
-            writer.write("Ciao Mondo!\r\n");
+            writer.write("000000");
             writer.flush();
             spostaVariabili();
             entraIntent();

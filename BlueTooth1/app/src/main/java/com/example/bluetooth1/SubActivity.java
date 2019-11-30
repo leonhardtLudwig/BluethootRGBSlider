@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -57,7 +58,7 @@ public class SubActivity extends AppCompatActivity {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
             GradientDrawable myCircle = (GradientDrawable) llCerchioRGB.getBackground();
-            mostraColori(myCircle);
+
 
         }
 
@@ -68,15 +69,15 @@ public class SubActivity extends AppCompatActivity {
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
-
+            GradientDrawable myCircle = (GradientDrawable) llCerchioRGB.getBackground();
+            mostraColori(myCircle);
         }
     };
 
     private OnSeekBarChangeListener seekBarGreen = new OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-            GradientDrawable myCircle = (GradientDrawable) llCerchioRGB.getBackground();
-            mostraColori(myCircle);
+
 
         }
 
@@ -88,14 +89,14 @@ public class SubActivity extends AppCompatActivity {
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
-
+            GradientDrawable myCircle = (GradientDrawable) llCerchioRGB.getBackground();
+            mostraColori(myCircle);
         }
     };
     private OnSeekBarChangeListener seekBarBlue = new OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-            GradientDrawable myCircle = (GradientDrawable) llCerchioRGB.getBackground();
-            mostraColori(myCircle);
+
 
         }
 
@@ -107,11 +108,17 @@ public class SubActivity extends AppCompatActivity {
 
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
-
+            GradientDrawable myCircle = (GradientDrawable) llCerchioRGB.getBackground();
+            mostraColori(myCircle);
         }
     };
     public void mostraColori(GradientDrawable myCircle){
         int color = Color.rgb(sbTrasparenzaRed.getProgress(),SbTrasparenzaGreen.getProgress(),SbTrasparenzaBlue.getProgress());
+        String toSend = Integer.toHexString(sbTrasparenzaRed.getProgress())
+                +Integer.toHexString(SbTrasparenzaGreen.getProgress())
+                +Integer.toHexString(SbTrasparenzaBlue.getProgress());
+        toSend=String.format("%02x%02x%02x",sbTrasparenzaRed.getProgress(),SbTrasparenzaGreen.getProgress(),SbTrasparenzaBlue.getProgress());
+
         myCircle.setColor(color);
 
         try {
@@ -119,7 +126,9 @@ public class SubActivity extends AppCompatActivity {
             String trasmettere= Integer.toString(color);
 
             //writer.write(trasmettere);
-            writer.write("ff00ff");
+            writer.write(toSend);
+
+            Log.d("color",toSend);
             writer.flush();
         } catch (IOException e) {
             e.printStackTrace();

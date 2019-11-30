@@ -26,38 +26,44 @@
         android:id="@+id/sbTrasparenzaRed"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        android:progressDrawable="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toTopOf="@+id/sbTrasparenzaGreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llCerchioRGB" />
-
-    <SeekBar
-        android:id="@+id/sbTrasparenzaGreen"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        android:progressDrawable="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toTopOf="@+id/sbTrasparenzaBlue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sbTrasparenzaRed" />
-
-    <SeekBar
-        android:id="@+id/sbTrasparenzaBlue"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="397dp"
+        android:layout_marginBottom="287dp"
+        android:max="255"
+        android:progress="0"
         android:progressDrawable="@android:color/holo_blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sbTrasparenzaGreen" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/sbTrasparenzaGreen"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="488dp"
+        android:layout_marginBottom="207dp"
+        android:max="255"
+        android:progress="0"
+        android:progressDrawable="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/sbTrasparenzaBlue"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="576dp"
+        android:layout_marginBottom="110dp"
+        android:max="255"
+        android:progress="0"
+        android:progressDrawable="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
