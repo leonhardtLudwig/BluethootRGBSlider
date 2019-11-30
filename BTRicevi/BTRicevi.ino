@@ -1,6 +1,3 @@
-/* Riceve messaggi che vengono inviati via Bluetooth HC-05 da una app.
-*/
-
 #include <SoftwareSerial.h>
 #include <string.h>
 
@@ -15,14 +12,9 @@ const int GREENPin= 10;
 const int BLUEPin= 9;
 
 
-//creo una nuova porta seriale via software
 SoftwareSerial myBT = SoftwareSerial(RXPin, TXPin);
-//const char *empty = "12345\n";
-//char *msgChar = "000000\n";
 char msgChar[7];
-//msgChar[6] = '\n';
 char hexString[3];
-//hexString[2] = '\n';
 
 int r = 0;
 int g = 0;
@@ -49,11 +41,9 @@ void loop()
 {
   i = 0;
   while (myBT.available()) {
-    
     msgChar[i++] = char(myBT.read());
   }
-  delay(100); //delay
-  //Serial.println(msgChar);
+  delay(100);
 
   extractRGB();
   printRGB(r,g,b);
