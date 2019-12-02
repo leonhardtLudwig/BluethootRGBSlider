@@ -32,11 +32,21 @@
 ![](SchemaArduino.png)
 ### Schema Elettrico
 ![](SchemaElettrico.png)
-#### Descrizione tecnologia bluethoot
-#### Come funziona il ricevitore
 
+#### Il bluethoot
+##### Cenni Storici
+ Il Bluetooth è stato sviluppato da Ericsson, un'azienda che, con sede principale a Stoccolma(Svezia) è leader mondiale nella fornitura di tecnologie e servizi per la comunicazione. Il Gruppo è impegnato nella realizzazione della networked society – Società Connessa - attraverso soluzioni efficienti che consentono di lavorare, studiare e vivere in totale libertà in un mondo più sostenibile. Successivamente, il 20 maggio 1999 viene formalizzata e annunicata da SIG(special interest group), associazione formata da Sony Ericsson, IBM, intel, nokia e molte altre.
+ Il nome bluetooth è ispirato al re Aroldo I di danimarca(Harold Bluetooth), il quale riusci ad unificare tutte le tribù guerrire in una nazione introducendo il cristianesimo. Infatti la sigla del logo deriva dalle lettere runiche dellse sue iniziali.
+##### Come funziona
+Bluetooth fornisce un metodo standard, economico e sicuro  per scambiare informazioni tra i dispositivi diversi attraverso una frequenza radio sicura a corto di raggio. Bluetooth cerca i dispostivi coperti dal segnale radio entro un raggio di qualche decina di metri. Questi dispositivi connessi tra loro devono possedere le specifiche hardware e software rihieste dallo standard stesso. Questo standard è stato progettato con l'obiettivo primario di ottenere bassi consumi, un corto raggio d'azione e un basso costo di produzione per i dispositivi compatibili. Esistono 4 diverse classi:
+- 1=arriva ad una distanza di 100 metri con una potenza di 100mW
+- 2=arriva ad una distanza di 10 metri con una potenza di 2,5 mW
+- 3=arriva ad una distanza di 1 metro con una potenza di 1 mW
+- 4=arriva ad una distanza di 0,5 metro con una potenza di 0,5 mW
 
-
+Quando 2 dispositivi bluetooth vengono collegati vien usato un processo chiamato **pairing**, il quale permette il reciproco riconoscimento dei dispositivi.
+Il pairing può avvenire anche per contatto fisico(NFC), metodo usato anche per il pagamento nei negozi semplicemente passando il telefono o anche solo la carta di credito con questa funzione.
+La comunicazione tra i dispositivi aviene attraverso la commutazione di pacchetto con l'architettura MASTER/SLAVE costituito da intervalli di 12 ms nella qual un dispositivo rimane in contatto mentre l'altro comunica, nell'intervallo successivo avvien il contrario.
 
 ## Software e Linguaggi
 
@@ -83,7 +93,27 @@ Per la programmazione dell'app Android è stato utilizzato l'[IDE gratuito](http
 
 
 ### Android/Java
-- lorem ipsum
+In andorid per utilizzare le API buetooth sono necessarie le seguenti autorizzazioni che vanno inserite nel file AndroidManifest.xml:
+- android.permission.BLUETOOTH
+- android.permission.BLUETOOTH_ADMIN
+invece per eseguire operazioni di scansione alla ricerca ad sempio di nuovi dispositivi bluetooth va inserita l'istruzione
+**android.permission.ACCESS_COARSE_LOCATION** se l'app andrà installata su dispositivi android 9 o inferiori, invece va inserita
+**android.permission.FINE_LOCATION** per app con versione superiore ad android 9.
+
+l'oggetto che consente di interfacciarsi con il modulo bluetooth del telefono è denominato BluetoothAdapter.
+nel codice java viene utilizzato il metodo statico getDefaultAdapter() per ottenere un'istanza.
+se il telefono non ha un modulo bluetooth, il metodo restituisce NULL.
+Nel telefono molto importante è attivare le impostazioni dello sviluppatore per attivare il DEBUG USB, modalità che consente ai dispositivi Andorid di comunicare con i computer per facilitare le attività di sviluppo di app per android.
+
+per verificare che il modulo bluetooth sia abilitato, viene utilizzato il metodo isEnabeled(), nel caso non sia abilitato, possiamo richiederne l'abilitazione tramite una intent.
+
+In per se il programma su android è un'insieme dei 2 precedenti progetti ColorRGB e Intent.
+Nel progetto ColorRGB modificando 3 seekbar equivalenti ai colori rosso,verde e blu veniva colorato un cerchio mettendo assieme i valori delle 3 seekbar in esadeciamale utilizzato appunto la notazione RGB.
+nel progetto Intent invece avviene una richiesta da parte di un componente di una funzionalità che viene implementata in un altro componente. Viene utilizzato per fare interagire le applicazioni tra di loro, sia quelel programmate che quelle già presenti nel sistema.
+
+Aprendo l'applicazione appare una schermata con tutti i dispostivi associati al telefono.
+Questa parte di codice java è stata fornita dal professore.
+Successivamente, una volta selezionato il dispositivo desiderato(HC-05) avviene l'intent, quindi si apre un'altra schermata nella quale è presente un cerchio centrale con 3 seekbar corrispondenti ai colori rosso,verde e blu. Modificando le 3 seekbar viene modificato il colore del cerchio mettendo assieme i 3 colori delle seekbar. il risultato viene inviato al dispostivo collegato, nel nostro caso l'arduino, con una notazione esadecimale a 6 cifre per comporre una stringa combatta senza rischio di errore nel prendere le cifre e accostarle in una stringa.
 
 <hr>
 <footer>
