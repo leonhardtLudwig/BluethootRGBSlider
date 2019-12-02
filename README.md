@@ -20,9 +20,11 @@
 - arduino lorem ipsum
 - trasmettitore bluethoot lorem ipsum
 
-### Schema ricevitore bluethoot
-#### Come funziona il ricevitore
+### Schema Arduino
+### Schema Elettrico
 #### Descrizione tecnologia bluethoot
+#### Come funziona il ricevitore
+
 
 ### Schema elettrico arduino
 - foto schema elettrico fritzing ![](schema.png)
