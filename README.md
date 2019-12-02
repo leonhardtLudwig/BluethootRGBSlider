@@ -29,7 +29,7 @@
 - **Xiaomi MI8Lite** Dispositivo sui cui sono state effettuate le prove di comunicazione con l'Arduino
 
 ### Schema Arduino
-![](https://imgur.com/0sxc06y)
+![](SchemaArduino.png)
 ### Schema Elettrico
 ![](SchemaElettrico.png)
 #### Descrizione tecnologia bluethoot
