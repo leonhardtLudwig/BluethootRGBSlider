@@ -1,4 +1,5 @@
 # BluethootRGBSlider
+#### Link al repository su [GitHub](https://github.com/leonhardtLudwig/BluethootRGBSlider)
 
 ## Leonardo Luigi Pepe & Davide Volpe
 
@@ -50,12 +51,12 @@ Per la programmazione dell'app Android è stato utilizzato l'[IDE gratuito](http
 >Android Studio è un ambiente di sviluppo integrato (IDE) per lo sviluppo per la piattaforma Android. È stato annunciato il 16 maggio 2013 in occasione della conferenza Google I/O tenuta dal Product Manager Google, Katherine Chou. Android Studio è disponibile gratuitamente sotto licenza Apache 2.0.
 [fonte](https://it.wikipedia.org/wiki/Android_Studio)
 
-### C/C++/Arduino
+### C/C++/Arduino (**BTRicevi**)
 #### Librerie utilizzate
 - **SoftwareSerial** Libreria necessaria per la comunicazione bluethoot
 - **String** Libreria per la gestione delle stringhe
 
-#### Variabili d'ambiente
+#### Variabili d'ambiente (**Bluethoot1**)
 - **RXPin** Pin arduino per la ricezione che va collegato al **TXPin** del modulo HC-05
 - **TXPin** arduino per la trasmissione che va collegato al **RXPin** del modulo HC-05
 - **REDPin** , **GREENPin** e **BLUEPin** corrispondono ai pin del led rgb per l'invio di un valore da 0 a 255 corrispondente ad un colore
